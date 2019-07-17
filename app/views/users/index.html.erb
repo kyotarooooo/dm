@@ -1,0 +1,6 @@
+<h1>ユーザー一覧</h1>
+
+<% @users.each do |user| %>
+	<%= attachment_image_tag user, :profile_image, :fill, 350, 350, format: 'jpeg', fallback: "no_image.jpg", size:'350x350', class: 'img-circle profile-thumb my-img edit-img' %>
+	<%= link_to user.user_name, user_path(user.id) %>
+<% end %>
