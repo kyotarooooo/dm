@@ -1,3 +1,24 @@
-<h1><%= @user.user_name %></h1>
+<h1>ユーザー詳細</h1>
 
-<%= attachment_image_tag @user, :profile_image, :fill, 350, 350, format: 'jpeg', fallback: "no_image.jpg", size:'350x350', class: 'img-circle profile-thumb my-img edit-img' %>
+<h2><%= @user.user_name %></h2>
+
+<!-- @user.idとcurrent_user.idが一致してたら -->
+<% if @user.id == current_user.id %>
+
+<% else %>
+<!-- @isRoomにtrueが入ってたら -->
+  <% if @isRoom == true %>
+  <!-- @roomIdはコントローラの @roomId = cu.room_id ここの部分 -->
+    <%= link_to "チャットへ", room_path(@roomId) %>
+  <% else %>
+  <!-- @entryの中にURLのuser.idを入れる。@roomのフォームを作ってuser.idを持ったままroom.idを作る -->
+	<%= form_for @room do |f| %>
+    	<%= fields_for @entry do |e| %>
+        	<%= e.hidden_field :user_id, :value=> @user.id %>
+      	<% end %>
+      <%= f.submit "チャットを始める" %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<%= link_to "ユーザー一覧に戻る", users_path %>
