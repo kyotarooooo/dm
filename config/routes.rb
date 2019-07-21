@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
   resources :messages, only: [:create]
   resources :rooms, only: [:create, :show, :index]
+  resources :decks, only: [:new, :create, :index]
 end

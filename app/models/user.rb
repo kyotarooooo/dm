@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_many :entries, dependent: :destroy
 
+  has_many :decks, dependent: :destroy
+
   def self.search(search)
     return User.all unless search
     User.where(['user_name LIKE ?', "%#{search}%"])

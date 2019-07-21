@@ -1,0 +1,17 @@
+<h1>デッキを投稿する</h1>
+
+<%= form_for(@deck) do |f| %>
+	<div class = "field" >
+		<%= f.label :デッキ名 %>
+		<%= f.text_field :deck_name %>
+	</div>
+
+	<div class = "field" >
+		<%= f.label :本文 %>
+		<%= f.text_area :body %>
+	</div>
+
+	<div class = "field" >
+		<%= f.submit "投稿する" %>
+	</div>
+<% end %>

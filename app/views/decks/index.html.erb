@@ -1,0 +1,12 @@
+<h1>デッキ一覧</h1>
+
+<% @decks.each do |deck| %>
+
+	<div class = "field">
+		<p>デッキ名 :<%= deck.deck_name %></p>
+	</div>
+
+	<div class = "field">
+		<%= deck.body %>
+	</div>
+<% end %>
