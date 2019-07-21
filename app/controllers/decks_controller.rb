@@ -19,6 +19,11 @@ class DecksController < ApplicationController
 		@decks = Deck.all
 	end
 
+	def show
+		@deck = Deck.find(params[:id])
+		@like = Like.new
+	end
+
 	private
 	def deck_params
 		params.require(:deck).permit(:user_id, :deck_name, :body)

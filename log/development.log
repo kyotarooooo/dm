@@ -3944,3 +3944,1433 @@ Processing by DecksController#index as HTML
 Completed 200 OK in 409ms (Views: 379.7ms | ActiveRecord: 3.8ms)
 
 
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateLikes (20190721144225)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190721144225_create_likes.rb:3
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "likes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "deck_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_2d63144d56"
+FOREIGN KEY ("deck_id")
+  REFERENCES "decks" ("id")
+, CONSTRAINT "fk_rails_1e09b5dabf"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20190721144225_create_likes.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_likes_on_deck_id" ON "likes" ("deck_id")[0m
+  ↳ db/migrate/20190721144225_create_likes.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_likes_on_user_id" ON "likes" ("user_id")[0m
+  ↳ db/migrate/20190721144225_create_likes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190721144225"]]
+  ↳ bin/rails:9
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (2.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for 10.0.2.2 at 2019-07-21 14:58:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:14
+Completed 200 OK in 5939ms (Views: 5903.3ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/decks" for 10.0.2.2 at 2019-07-21 14:58:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#index as HTML
+  Rendering decks/index.html.erb within layouts/application
+  [1m[36mDeck Load (1.0ms)[0m  [1m[34mSELECT "decks".* FROM "decks"[0m
+  ↳ app/views/decks/index.html.erb:3
+  Rendered decks/index.html.erb within layouts/application (13.0ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:14
+Completed 200 OK in 381ms (Views: 338.3ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 14:58:55 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (2.6ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 106ms (ActiveRecord: 12.8ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+...取り消す', @deck_like_path(@deck), method: :delete );@ou...
+...                              ^
+/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+...@deck_like_path(@deck), method: :delete );@output_buffer.saf...
+...                        ^~~~~~~):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:00:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (1.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 1.1ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected ',', expecting ')'
+...to ('いいねを取り消す', @deck_like_path(@deck)), met...
+...                              ^):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected ',', expecting ')'
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:01:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (2.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 85ms (ActiveRecord: 2.1ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+...取り消す'), (@deck_like_path(@deck)), method: :delete );@o...
+...                                ^
+/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+...deck_like_path(@deck)), method: :delete );@output_buffer.saf...
+...                        ^~~~~~~):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:01:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (1.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 1.2ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+...取り消す'), @deck_like_path(@deck), method: :delete );@ou...
+...                               ^
+/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+...@deck_like_path(@deck), method: :delete );@output_buffer.saf...
+...                        ^~~~~~~):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:01:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (1.3ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 1.3ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected ',', expecting ')'
+...to ('いいねを取り消す', @deck_like_path(@deck)), met...
+...                              ^):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected ',', expecting ')'
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:02:54 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (2.6ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 81ms (ActiveRecord: 2.6ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+...取り消す'), @deck_like_path(@deck)), method: :delete );@o...
+...                               ^):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:03:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (2.5ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 84ms (ActiveRecord: 2.5ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+...取り消す'), @deck_like_path(@deck)), method: :delete) );@...
+...                               ^):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:03:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (1.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 1.1ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+...取り消す'), @deck_like_path(@deck)), method: :delete) );@...
+...                               ^):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:03:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (2.4ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 2.4ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+...取り消す'), @deck_like_path(@deck), method: :delete) );@o...
+...                               ^
+/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+...@deck_like_path(@deck), method: :delete) );@output_buffer.sa...
+...                        ^~~~~~~):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:03:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (2.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 85ms (ActiveRecord: 2.1ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected ',', expecting ')'
+...to ('いいねを取り消す', @deck_like_path(@deck), meth...
+...                              ^
+/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+...@deck_like_path(@deck), method: :delete) );@output_buffer.sa...
+...                        ^~~~~~~):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected ',', expecting ')'
+app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:04:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (1.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 1.2ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+...取り消す', @deck_like_path(@deck), method: :delete );@ou...
+...                              ^
+/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+...@deck_like_path(@deck), method: :delete );@output_buffer.saf...
+...                        ^~~~~~~):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:04:24 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (2.7ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 2.7ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+...取り消す', @deck_like_path(@deck), method: :delete );@ou...
+...                              ^
+/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+...@deck_like_path(@deck), method: :delete );@output_buffer.saf...
+...                        ^~~~~~~):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:04:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (2.3ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 2.3ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+...取り消す', @deck_like_path(@deck), method: :delete );@ou...
+...                              ^
+/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+...@deck_like_path(@deck), method: :delete );@output_buffer.saf...
+...                        ^~~~~~~):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:04:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (1.7ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 84ms (ActiveRecord: 1.7ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+...取り消す', @deck_like_path(@deck), method: :delete );@ou...
+...                              ^
+/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+...@deck_like_path(@deck), method: :delete );@output_buffer.saf...
+...                        ^~~~~~~):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:04:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (1.8ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 1.8ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+...取り消す', @deck_like_path(@deck), method: :delete );@ou...
+...                              ^
+/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+...@deck_like_path(@deck), method: :delete );@output_buffer.saf...
+...                        ^~~~~~~):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:04:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (1.4ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 162ms (ActiveRecord: 1.4ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+...取り消す', @deck_like_path(@deck), method: :delete );@ou...
+...                              ^
+/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+...@deck_like_path(@deck), method: :delete );@output_buffer.saf...
+...                        ^~~~~~~):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:04:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (1.9ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 111ms (ActiveRecord: 1.9ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+...取り消す', @deck_like_path(@deck), method: :delete );@ou...
+...                              ^
+/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+...@deck_like_path(@deck), method: :delete );@output_buffer.saf...
+...                        ^~~~~~~):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:04:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (2.4ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 2.4ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+...取り消す', @deck_like_path(@deck), method: :delete );@ou...
+...                              ^
+/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+...@deck_like_path(@deck), method: :delete );@output_buffer.saf...
+...                        ^~~~~~~):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:05:27 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (1.5ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 1.5ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+...取り消す'), @deck_like_path(@deck), method: :delete );@ou...
+...                               ^
+/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+...@deck_like_path(@deck), method: :delete );@output_buffer.saf...
+...                        ^~~~~~~):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:05:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (3.0ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 3.0ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+...取り消す'), @deck_like_path(@deck), method: :delete );@ou...
+...                               ^
+/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+...@deck_like_path(@deck), method: :delete );@output_buffer.saf...
+...                        ^~~~~~~):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:05:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (2.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 2.1ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+...取り消す'), @deck_like_path(@deck), method: :delete );@ou...
+...                               ^
+/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+...@deck_like_path(@deck), method: :delete );@output_buffer.saf...
+...                        ^~~~~~~):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:05:48 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (1.5ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 1.5ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected ',', expecting ')'
+...to ('いいねを取り消す', @deck_like_path(@deck), meth...
+...                              ^
+/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+...@deck_like_path(@deck), method: :delete) );@output_buffer.sa...
+...                        ^~~~~~~):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected ',', expecting ')'
+app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:06:15 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (1.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 1.2ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+...を取り消す',@deck_like_path(@deck), method: :delete );@ou...
+...                                ^
+/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+...@deck_like_path(@deck), method: :delete );@output_buffer.saf...
+...                        ^~~~~~~):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:06:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (1.5ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 1.5ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+...を取り消す',@deck_like_path(@deck), method: :delete );@ou...
+...                                ^
+/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+...@deck_like_path(@deck), method: :delete );@output_buffer.saf...
+...                        ^~~~~~~):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:06:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (0.9ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 75ms (ActiveRecord: 0.9ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+...取り消す', @deck_like_path(@deck), method: :delete );@ou...
+...                              ^
+/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+...@deck_like_path(@deck), method: :delete );@output_buffer.saf...
+...                        ^~~~~~~):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:08:05 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (1.5ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 1.5ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected '=', expecting keyword_end
+  ;= button_to 'いいねを取...
+   ^
+/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting keyword_end
+...取り消す', @deck_like_path(@deck), method: :delete 
+...                              ^):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected '=', expecting keyword_end
+app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting keyword_end
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:08:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (2.3ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 2.3ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+...取り消す", @deck_like_path(@deck), method: :delete );@ou...
+...                              ^
+/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+...@deck_like_path(@deck), method: :delete );@output_buffer.saf...
+...                        ^~~~~~~):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:09:09 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (2.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 2.2ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+...取り消す", (@deck_like_path(@deck)), method: :delete );@o...
+...                               ^
+/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+...deck_like_path(@deck)), method: :delete );@output_buffer.saf...
+...                        ^~~~~~~):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:09:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (1.9ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 85ms (ActiveRecord: 1.9ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected ',', expecting ')'
+...to ("いいねを取り消す", @deck_like_path(@deck), meth...
+...                              ^
+/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+...@deck_like_path(@deck), method: :delete) );@output_buffer.sa...
+...                        ^~~~~~~):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected ',', expecting ')'
+app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:09:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (1.5ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 1.5ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected ',', expecting ')'
+...to ("いいねを取り消す", @deck_like_path(@deck)), met...
+...                              ^):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected ',', expecting ')'
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:10:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (1.3ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 1.3ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected tIVAR, expecting ')'
+...を取り消す" @deck_like_path(@deck)), method: :delete );@...
+...                 ^~~~~~~~~~~~~~~):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected tIVAR, expecting ')'
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:13:03 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (2.3ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 2.3ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected ',', expecting ')'
+...to ("いいねを取り消す", @deck_like_path(@deck)), met...
+...                              ^):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected ',', expecting ')'
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:13:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (1.6ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 99ms (ActiveRecord: 1.6ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected ',', expecting ')'
+...to ('いいねを取り消す', @deck_like_path(@deck)), met...
+...                              ^):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected ',', expecting ')'
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:14:10 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (2.9ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 126ms (ActiveRecord: 2.9ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected tIVAR, expecting ')'
+...を取り消す' @deck_like_path(@deck)) method: :delete );@o...
+...                 ^~~~~~~~~~~~~~~):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected tIVAR, expecting ')'
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:16:09 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (2.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 84ms (ActiveRecord: 2.1ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected tIVAR, expecting ')'
+...を取り消す' @deck_like_path(@deck)) (method: :delete) );...
+...                 ^~~~~~~~~~~~~~~):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected tIVAR, expecting ')'
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:16:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (1.4ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 1.4ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected ',', expecting ')'
+...to ('いいねを取り消す', @deck_like_path(@deck)), (me...
+...                              ^
+/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected ')', expecting keyword_end
+...th(@deck)), (method: :delete) );@output_buffer.safe_append='
+...                              ^):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected ',', expecting ')'
+app/views/decks/show.html.erb:8: syntax error, unexpected ')', expecting keyword_end
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:16:55 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (1.4ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 104ms (ActiveRecord: 1.4ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected tIVAR, expecting ')'
+...を取り消す' @deck_like_path(@deck)) method: :delete );@o...
+...                 ^~~~~~~~~~~~~~~):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected tIVAR, expecting ')'
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:20:56 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (2.0ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 2.0ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+...取り消す', @deck_like_path({@deck}), method: :delete );@...
+...                              ^):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:21:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (1.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 79ms (ActiveRecord: 1.1ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected '{', expecting ')'
+...取り消す', @deck_like_path{@deck}, method: :delete );@ou...
+...                              ^):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected '{', expecting ')'
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:22:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (1.6ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 1.6ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+...取り消す', @deck_like_path(@deck), method: :delete );@ou...
+...                              ^
+/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+...@deck_like_path(@deck), method: :delete );@output_buffer.saf...
+...                        ^~~~~~~):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:25:06 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (3.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/views/decks/show.html.erb:6
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/decks/show.html.erb:7
+  [1m[36mLike Exists (3.1ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."user_id" = ? AND "likes"."deck_id" = ? LIMIT ?[0m  [["user_id", 1], ["deck_id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:22
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/views/decks/show.html.erb:12
+  Rendered decks/show.html.erb within layouts/application (83.0ms)
+Completed 200 OK in 477ms (Views: 439.9ms | ActiveRecord: 14.4ms)
+
+
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:25:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (2.6ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 83ms (ActiveRecord: 2.6ms)
+
+
+  
+SyntaxError (/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+...取り消す', @deck_like_path(@deck), method: :delete );@ou...
+...                              ^
+/vagrant/dm/app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+...@deck_like_path(@deck), method: :delete );@output_buffer.saf...
+...                        ^~~~~~~):
+  
+app/views/decks/show.html.erb:8: syntax error, unexpected '(', expecting ')'
+app/views/decks/show.html.erb:8: syntax error, unexpected tLABEL
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:26:20 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (2.0ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/views/decks/show.html.erb:6
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/decks/show.html.erb:7
+  [1m[36mLike Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."user_id" = ? AND "likes"."deck_id" = ? LIMIT ?[0m  [["user_id", 1], ["deck_id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:22
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/views/decks/show.html.erb:13
+  Rendered decks/show.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 456ms (Views: 414.9ms | ActiveRecord: 7.2ms)
+
+
+Started POST "/decks/1/likes" for 10.0.2.2 at 2019-07-21 15:26:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LikesController#create as HTML
+  Parameters: {"authenticity_token"=>"l8dE+yWlcZaSq7yRjeF59IVghY9ph4l8McEpTnUvEYBqiNPWfYHdRp84MnyV2mnihWXrTKFXCDfeqF+Wgr9LLg==", "deck_id"=>"1"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/likes_controller.rb:4
+  [1m[36mDeck Load (1.8ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:4
+  [1m[36mLike Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."deck_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["deck_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:4
+  [1m[36mLike Create (5.4ms)[0m  [1m[32mINSERT INTO "likes" ("deck_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["deck_id", 1], ["user_id", 1], ["created_at", "2019-07-21 15:26:29.840647"], ["updated_at", "2019-07-21 15:26:29.840647"]]
+  ↳ app/controllers/likes_controller.rb:4
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/likes_controller.rb:4
+Redirected to http://localhost:3000/decks/1
+Completed 302 Found in 28ms (ActiveRecord: 13.1ms)
+
+
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:26:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (1.4ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/views/decks/show.html.erb:6
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/decks/show.html.erb:7
+  [1m[36mLike Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."user_id" = ? AND "likes"."deck_id" = ? LIMIT ?[0m  [["user_id", 1], ["deck_id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:22
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/views/decks/show.html.erb:13
+  Rendered decks/show.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 382ms (Views: 357.4ms | ActiveRecord: 7.3ms)
+
+
+Started DELETE "/decks/1/likes/1" for 10.0.2.2 at 2019-07-21 15:26:32 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LikesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"PSGixfALrFTVUCLjApr7XyAjG+DafozhHjvleg/iaknAbjXoqC8AhNjDrA4aoetJICZ1IxKuDarxUpOi+HIw5w==", "deck_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:9
+  [1m[36mLike Load (2.3ms)[0m  [1m[34mSELECT  "likes".* FROM "likes" WHERE "likes"."deck_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["deck_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/likes_controller.rb:10
+  [1m[36mLike Destroy (7.1ms)[0m  [1m[31mDELETE FROM "likes" WHERE "likes"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/likes_controller.rb:10
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/likes_controller.rb:10
+Redirected to http://localhost:3000/decks/1
+Completed 302 Found in 32ms (ActiveRecord: 17.5ms)
+
+
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:26:32 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (2.4ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/views/decks/show.html.erb:6
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/decks/show.html.erb:7
+  [1m[36mLike Exists (1.9ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."user_id" = ? AND "likes"."deck_id" = ? LIMIT ?[0m  [["user_id", 1], ["deck_id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:22
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/views/decks/show.html.erb:13
+  Rendered decks/show.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 368ms (Views: 338.5ms | ActiveRecord: 9.3ms)
+
+
+Started POST "/decks/1/likes" for 10.0.2.2 at 2019-07-21 15:26:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LikesController#create as HTML
+  Parameters: {"authenticity_token"=>"fA7OxsdcJQfQ44G65fte+DAttqTUfEpacjSSq8Nw96WBQVnrn3iJ191wD1f9wE7uMCjYZxysyxGdXeRzNOCtCw==", "deck_id"=>"1"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/likes_controller.rb:4
+  [1m[36mDeck Load (2.4ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:4
+  [1m[36mLike Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."deck_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["deck_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:4
+  [1m[36mLike Create (7.1ms)[0m  [1m[32mINSERT INTO "likes" ("deck_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["deck_id", 1], ["user_id", 1], ["created_at", "2019-07-21 15:26:33.757754"], ["updated_at", "2019-07-21 15:26:33.757754"]]
+  ↳ app/controllers/likes_controller.rb:4
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/likes_controller.rb:4
+Redirected to http://localhost:3000/decks/1
+Completed 302 Found in 33ms (ActiveRecord: 17.3ms)
+
+
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:26:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (1.5ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/views/decks/show.html.erb:6
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/decks/show.html.erb:7
+  [1m[36mLike Exists (2.4ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."user_id" = ? AND "likes"."deck_id" = ? LIMIT ?[0m  [["user_id", 1], ["deck_id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:22
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/views/decks/show.html.erb:13
+  Rendered decks/show.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 356ms (Views: 327.9ms | ActiveRecord: 9.8ms)
+
+
+Started DELETE "/decks/1/likes/1" for 10.0.2.2 at 2019-07-21 15:26:34 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LikesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"GCwg2zEPZV/V+4SzNdLX2dign7Gu4Gi7VR2+9ADpJVHlY7f2aSvJj9hoCl4t6cfP2KXxcmYw6fC6dMgs93l//w==", "deck_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:9
+  [1m[36mLike Load (2.5ms)[0m  [1m[34mSELECT  "likes".* FROM "likes" WHERE "likes"."deck_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["deck_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/likes_controller.rb:10
+  [1m[36mLike Destroy (8.9ms)[0m  [1m[31mDELETE FROM "likes" WHERE "likes"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/likes_controller.rb:10
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/likes_controller.rb:10
+Redirected to http://localhost:3000/decks/1
+Completed 302 Found in 30ms (ActiveRecord: 19.9ms)
+
+
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:26:34 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (1.6ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/views/decks/show.html.erb:6
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/decks/show.html.erb:7
+  [1m[36mLike Exists (2.4ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."user_id" = ? AND "likes"."deck_id" = ? LIMIT ?[0m  [["user_id", 1], ["deck_id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:22
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/views/decks/show.html.erb:13
+  Rendered decks/show.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 364ms (Views: 336.1ms | ActiveRecord: 8.5ms)
+
+
+Started POST "/decks/1/likes" for 10.0.2.2 at 2019-07-21 15:26:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LikesController#create as HTML
+  Parameters: {"authenticity_token"=>"hyTl45VjqN150iZdgb8gCsnE0+w0zODFAASPfbbLCjd6a3LOzUcEDXRBqLCZhDAcycG9L/wcYY7vbfmlQVtQmQ==", "deck_id"=>"1"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/likes_controller.rb:4
+  [1m[36mDeck Load (2.4ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:4
+  [1m[36mLike Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."deck_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["deck_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:4
+  [1m[36mLike Create (6.1ms)[0m  [1m[32mINSERT INTO "likes" ("deck_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["deck_id", 1], ["user_id", 1], ["created_at", "2019-07-21 15:26:35.348651"], ["updated_at", "2019-07-21 15:26:35.348651"]]
+  ↳ app/controllers/likes_controller.rb:4
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/likes_controller.rb:4
+Redirected to http://localhost:3000/decks/1
+Completed 302 Found in 33ms (ActiveRecord: 14.1ms)
+
+
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:26:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (1.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/views/decks/show.html.erb:6
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/decks/show.html.erb:7
+  [1m[36mLike Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."user_id" = ? AND "likes"."deck_id" = ? LIMIT ?[0m  [["user_id", 1], ["deck_id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:22
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/views/decks/show.html.erb:13
+  Rendered decks/show.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 371ms (Views: 344.0ms | ActiveRecord: 8.1ms)
+
+
+Started DELETE "/decks/1/likes/1" for 10.0.2.2 at 2019-07-21 15:26:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LikesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"iaze6m84gYbb7wGdZA+7Kp/q4HKkpnEvYS3HhcKU6U1040nHNxwtVtZ8j3B8NKs8n++OsWx28GSORLFdNQSz4w==", "deck_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:9
+  [1m[36mLike Load (1.3ms)[0m  [1m[34mSELECT  "likes".* FROM "likes" WHERE "likes"."deck_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["deck_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/likes_controller.rb:10
+  [1m[36mLike Destroy (8.6ms)[0m  [1m[31mDELETE FROM "likes" WHERE "likes"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/likes_controller.rb:10
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/likes_controller.rb:10
+Redirected to http://localhost:3000/decks/1
+Completed 302 Found in 30ms (ActiveRecord: 18.1ms)
+
+
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:26:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (1.5ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/views/decks/show.html.erb:6
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/decks/show.html.erb:7
+  [1m[36mLike Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."user_id" = ? AND "likes"."deck_id" = ? LIMIT ?[0m  [["user_id", 1], ["deck_id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:22
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/views/decks/show.html.erb:13
+  Rendered decks/show.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 355ms (Views: 328.9ms | ActiveRecord: 5.5ms)
+
+
+Started POST "/decks/1/likes" for 10.0.2.2 at 2019-07-21 15:26:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LikesController#create as HTML
+  Parameters: {"authenticity_token"=>"9lBTeSqctP4yoFuFaokjRiJgG9QNcU0qBnbODJyhc2MLH8RUcrgYLj8z1WhysjNQImV1F8WhzGHpH7jUazEpzQ==", "deck_id"=>"1"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/likes_controller.rb:4
+  [1m[36mDeck Load (2.3ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:4
+  [1m[36mLike Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."deck_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["deck_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:4
+  [1m[36mLike Create (8.4ms)[0m  [1m[32mINSERT INTO "likes" ("deck_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["deck_id", 1], ["user_id", 1], ["created_at", "2019-07-21 15:26:36.948263"], ["updated_at", "2019-07-21 15:26:36.948263"]]
+  ↳ app/controllers/likes_controller.rb:4
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/likes_controller.rb:4
+Redirected to http://localhost:3000/decks/1
+Completed 302 Found in 36ms (ActiveRecord: 18.4ms)
+
+
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:26:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (1.6ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/views/decks/show.html.erb:6
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/decks/show.html.erb:7
+  [1m[36mLike Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."user_id" = ? AND "likes"."deck_id" = ? LIMIT ?[0m  [["user_id", 1], ["deck_id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:22
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/views/decks/show.html.erb:13
+  Rendered decks/show.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 355ms (Views: 330.1ms | ActiveRecord: 8.3ms)
+
+
+Started DELETE "/decks/1/likes/1" for 10.0.2.2 at 2019-07-21 15:26:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LikesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zhL9lEiHIJhSsAHWQVvomuRiwTu1TrplwM19lsJPMUszXWq5EKOMSF8jjztZYPiM5Gev+H2eOy4vpAtONd9r5Q==", "deck_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:9
+  [1m[36mLike Load (2.1ms)[0m  [1m[34mSELECT  "likes".* FROM "likes" WHERE "likes"."deck_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["deck_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/likes_controller.rb:10
+  [1m[36mLike Destroy (8.3ms)[0m  [1m[31mDELETE FROM "likes" WHERE "likes"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/likes_controller.rb:10
+  [1m[35m (4.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/likes_controller.rb:10
+Redirected to http://localhost:3000/decks/1
+Completed 302 Found in 28ms (ActiveRecord: 17.0ms)
+
+
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:26:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (1.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/views/decks/show.html.erb:6
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/decks/show.html.erb:7
+  [1m[36mLike Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."user_id" = ? AND "likes"."deck_id" = ? LIMIT ?[0m  [["user_id", 1], ["deck_id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:22
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/views/decks/show.html.erb:13
+  Rendered decks/show.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 386ms (Views: 358.8ms | ActiveRecord: 7.8ms)
+
+
+Started POST "/decks/1/likes" for 10.0.2.2 at 2019-07-21 15:26:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LikesController#create as HTML
+  Parameters: {"authenticity_token"=>"y7he/J9V07cQs/0PvBg42jLUvfrk49Qe7HM1g+RW1FM298nRx3F/Zx0gc+KkIyjMMtHTOSwzVVUDGkNbE8aO/Q==", "deck_id"=>"1"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/likes_controller.rb:4
+  [1m[36mDeck Load (2.9ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:4
+  [1m[36mLike Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."deck_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["deck_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:4
+  [1m[36mLike Create (10.1ms)[0m  [1m[32mINSERT INTO "likes" ("deck_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["deck_id", 1], ["user_id", 1], ["created_at", "2019-07-21 15:26:39.601544"], ["updated_at", "2019-07-21 15:26:39.601544"]]
+  ↳ app/controllers/likes_controller.rb:4
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/likes_controller.rb:4
+Redirected to http://localhost:3000/decks/1
+Completed 302 Found in 50ms (ActiveRecord: 23.2ms)
+
+
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:26:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (2.0ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/views/decks/show.html.erb:6
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/decks/show.html.erb:7
+  [1m[36mLike Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."user_id" = ? AND "likes"."deck_id" = ? LIMIT ?[0m  [["user_id", 1], ["deck_id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:22
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/views/decks/show.html.erb:13
+  Rendered decks/show.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 460ms (Views: 428.0ms | ActiveRecord: 10.3ms)
+
+
+Started DELETE "/decks/1/likes/1" for 10.0.2.2 at 2019-07-21 15:26:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LikesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"AsvUmGNgj6gIgsX+o2Eq4RNrd9Lxj983Unqdm4TimhH/hEO1O0QjeAURSxO7Wjr3E24ZETlfXny9E+tDc3LAvw==", "deck_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:9
+  [1m[36mLike Load (1.7ms)[0m  [1m[34mSELECT  "likes".* FROM "likes" WHERE "likes"."deck_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["deck_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/likes_controller.rb:10
+  [1m[36mLike Destroy (7.7ms)[0m  [1m[31mDELETE FROM "likes" WHERE "likes"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/likes_controller.rb:10
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/likes_controller.rb:10
+Redirected to http://localhost:3000/decks/1
+Completed 302 Found in 31ms (ActiveRecord: 16.0ms)
+
+
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:26:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (1.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/views/decks/show.html.erb:6
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/decks/show.html.erb:7
+  [1m[36mLike Exists (2.1ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."user_id" = ? AND "likes"."deck_id" = ? LIMIT ?[0m  [["user_id", 1], ["deck_id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:22
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/views/decks/show.html.erb:13
+  Rendered decks/show.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 358ms (Views: 329.0ms | ActiveRecord: 8.1ms)
+
+
+Started POST "/decks/1/likes" for 10.0.2.2 at 2019-07-21 15:26:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LikesController#create as HTML
+  Parameters: {"authenticity_token"=>"YQMUZpXeTC8qq75N/uAF+mHfePFWzIg6hwoFM3nltp2cTINLzfrg/yc4MKDm2xXsYdoWMp4cCXFoY3PrjnXsMw==", "deck_id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/likes_controller.rb:4
+  [1m[36mDeck Load (2.0ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:4
+  [1m[36mLike Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."deck_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["deck_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:4
+  [1m[36mLike Create (6.6ms)[0m  [1m[32mINSERT INTO "likes" ("deck_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["deck_id", 1], ["user_id", 1], ["created_at", "2019-07-21 15:26:41.700107"], ["updated_at", "2019-07-21 15:26:41.700107"]]
+  ↳ app/controllers/likes_controller.rb:4
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/likes_controller.rb:4
+Redirected to http://localhost:3000/decks/1
+Completed 302 Found in 35ms (ActiveRecord: 15.4ms)
+
+
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:26:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (1.4ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/views/decks/show.html.erb:6
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/decks/show.html.erb:7
+  [1m[36mLike Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."user_id" = ? AND "likes"."deck_id" = ? LIMIT ?[0m  [["user_id", 1], ["deck_id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:22
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/views/decks/show.html.erb:13
+  Rendered decks/show.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 377ms (Views: 345.6ms | ActiveRecord: 7.7ms)
+
+
+Started DELETE "/decks/1/likes/1" for 10.0.2.2 at 2019-07-21 15:26:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LikesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"DGD5BQ5H9pgHltc2+a2u/WNOIm7y0/fKEujtjGtfGKjxL24oVmNaSAoFWdvhlr7rY0tMrToDdoH9gZtUnM9CBg==", "deck_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:9
+  [1m[36mLike Load (1.9ms)[0m  [1m[34mSELECT  "likes".* FROM "likes" WHERE "likes"."deck_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["deck_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/likes_controller.rb:10
+  [1m[36mLike Destroy (7.4ms)[0m  [1m[31mDELETE FROM "likes" WHERE "likes"."id" = ?[0m  [["id", 6]]
+  ↳ app/controllers/likes_controller.rb:10
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/likes_controller.rb:10
+Redirected to http://localhost:3000/decks/1
+Completed 302 Found in 30ms (ActiveRecord: 16.2ms)
+
+
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:26:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (2.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/views/decks/show.html.erb:6
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/decks/show.html.erb:7
+  [1m[36mLike Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."user_id" = ? AND "likes"."deck_id" = ? LIMIT ?[0m  [["user_id", 1], ["deck_id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:22
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/views/decks/show.html.erb:13
+  Rendered decks/show.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 380ms (Views: 354.0ms | ActiveRecord: 8.4ms)
+
+
+Started POST "/decks/1/likes" for 10.0.2.2 at 2019-07-21 15:31:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LikesController#create as HTML
+  Parameters: {"authenticity_token"=>"vo+gdZ2VtTgtI8l5XrqCEzcgJBqPnNjgreIfOmmewdlDwDdYxbEZ6CCwR5RGgZIFNyVK2UdMWatCi2ning6bdw==", "deck_id"=>"1"}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/likes_controller.rb:4
+  [1m[36mDeck Load (2.8ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:4
+  [1m[36mLike Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."deck_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["deck_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:4
+  [1m[36mLike Create (8.0ms)[0m  [1m[32mINSERT INTO "likes" ("deck_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["deck_id", 1], ["user_id", 1], ["created_at", "2019-07-21 15:31:07.624000"], ["updated_at", "2019-07-21 15:31:07.624000"]]
+  ↳ app/controllers/likes_controller.rb:4
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/likes_controller.rb:4
+Redirected to http://localhost:3000/decks/1
+Completed 302 Found in 40ms (ActiveRecord: 20.4ms)
+
+
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:31:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (1.7ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/views/decks/show.html.erb:6
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/decks/show.html.erb:7
+  [1m[36mLike Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."user_id" = ? AND "likes"."deck_id" = ? LIMIT ?[0m  [["user_id", 1], ["deck_id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:22
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/views/decks/show.html.erb:13
+  Rendered decks/show.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 449ms (Views: 423.0ms | ActiveRecord: 8.5ms)
+
+
+Started DELETE "/decks/1/likes/1" for 10.0.2.2 at 2019-07-21 15:31:09 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LikesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4CCL8lkEvcjdTH5ku3wh+r4w9AEdY7EtyqyHDT6B6VcdbxzfASARGNDf8ImjRzHsvjWawtWzMGYlxfHVyRGz+Q==", "deck_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:9
+  [1m[36mLike Load (1.4ms)[0m  [1m[34mSELECT  "likes".* FROM "likes" WHERE "likes"."deck_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["deck_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/likes_controller.rb:10
+  [1m[36mLike Destroy (8.1ms)[0m  [1m[31mDELETE FROM "likes" WHERE "likes"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/likes_controller.rb:10
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/likes_controller.rb:10
+Redirected to http://localhost:3000/decks/1
+Completed 302 Found in 29ms (ActiveRecord: 16.5ms)
+
+
+Started GET "/decks/1" for 10.0.2.2 at 2019-07-21 15:31:09 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeck Load (2.0ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/decks_controller.rb:23
+  Rendering decks/show.html.erb within layouts/application
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/views/decks/show.html.erb:6
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/decks/show.html.erb:7
+  [1m[36mLike Exists (1.9ms)[0m  [1m[34mSELECT  1 AS one FROM "likes" WHERE "likes"."user_id" = ? AND "likes"."deck_id" = ? LIMIT ?[0m  [["user_id", 1], ["deck_id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:22
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/views/decks/show.html.erb:13
+  Rendered decks/show.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 392ms (Views: 359.7ms | ActiveRecord: 8.8ms)
+
+
